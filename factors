@@ -1,0 +1,14 @@
+import sys
+
+# Read in the list of numbers from the file
+with open(sys.argv[1], 'r') as f:
+    numbers = [int(line.strip()) for line in f]
+
+# Iterate through the list of numbers
+for n in numbers:
+    # Iterate through a range of numbers to find the factors of n
+    for i in range(2, n):
+        # If i is a factor of n, print the factorization and break out of the loop
+        if n % i == 0:
+            print(f"{n} = {i} * {n // i}")
+            break
